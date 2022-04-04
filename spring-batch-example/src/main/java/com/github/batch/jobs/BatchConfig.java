@@ -1,4 +1,4 @@
-package com.github.batch;
+package com.github.batch.jobs;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
