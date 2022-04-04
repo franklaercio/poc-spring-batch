@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @Configuration
-public class FixedWidthFileStepReaderConfig {
+public class FixedWidthFileReaderConfig {
 
   @StepScope
   @Bean

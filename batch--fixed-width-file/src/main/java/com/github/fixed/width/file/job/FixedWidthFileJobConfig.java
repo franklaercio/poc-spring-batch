@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class FixedWidthFileStepJobConfig {
+public class FixedWidthFileJobConfig {
 	@Autowired
 	public JobBuilderFactory jobBuilderFactory;
 	
