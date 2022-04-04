@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class BatchConfig {
+public class JobConfig {
 
   private final JobBuilderFactory jobBuilderFactory;
 
-  public BatchConfig(JobBuilderFactory jobBuilderFactory) {
+  public JobConfig(JobBuilderFactory jobBuilderFactory) {
     this.jobBuilderFactory = jobBuilderFactory;
   }
 
