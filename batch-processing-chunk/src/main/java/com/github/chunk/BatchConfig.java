@@ -35,7 +35,7 @@ public class BatchConfig {
 
   public Step printEvenOrOddStep() {
     return stepBuilderFactory.get("printEvenOrOddStep")
-        .<Integer, String>chunk(1)
+        .<Integer, String>chunk(10)
         .reader(countTenNumbers())
         .processor(evenOrOddProcessor())
         .writer(printWriter())
