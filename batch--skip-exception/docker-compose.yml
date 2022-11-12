@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  db-batch:
+    image: postgres
+    container_name: db-batch
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db-batch
+    volumes:
+      - pgdatabatch:/data/postgres
+  batch:
+    container_name: batch--skip-exception
+    image: batch--skip-exception
+    build: .
+    depends_on:
+      - db-batch
+    environment:
+      POSTGRESQL_URL: jdbc:postgresql://db-batch:5432/db-batch
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      FILE_PATH: /src/target/classes/customers.txt
+    volumes:
+      - ./:/src
+
+volumes:
+  pgdatabatch:
